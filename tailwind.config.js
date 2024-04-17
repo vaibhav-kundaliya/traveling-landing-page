@@ -14,11 +14,22 @@ module.exports = {
                 bold: 700,
                 extrabold: 800,
                 black: 900,
-                weight:1000
+                weight: 1000,
             },
-            colors:{
-                lightpurple: "#5D50C6"
-            }
+            colors: {
+                lightpurple: {
+                    500: "#5D50C6",
+                    700: "#4F3DAF",
+                },
+            },
+        },
+        screens: {
+            sm: "640px",
+            md: "768px",
+            lg: "1024px",
+            xl: "1280px",
+            "2xl": "1536px",
+            custom_xs: "425px",
         },
     },
     plugins: [],

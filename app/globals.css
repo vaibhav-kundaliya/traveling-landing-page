@@ -21,9 +21,27 @@ body {
   font-family: "Nunito Sans", sans-serif !important;
 }
 
+.left-padding{
+    padding-left: 16%;
+}
+
+.right-padding{
+    padding-right: 16%;
+}
+
 
 @layer utilities {
     .text-balance {
         text-wrap: balance;
     }
+}
+
+@media screen and (max-width: 1024px) {
+    .left-padding{
+        padding-left: 16%;
+    }
+    
+    .right-padding{
+        padding-right: 16%;
+    }   
 }

@@ -1,43 +1,95 @@
-import React from "react";
+"use client";
+import { Disclosure } from "@headlessui/react";
+import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
+import Image from 'next/image';
+
+const navigation = [
+    { name: "Home", href: "#", current: true },
+    { name: "Discover", href: "#", current: false },
+    { name: "Special Deals", href: "#", current: false },
+    { name: "Contact", href: "#", current: false },
+];
+
+function classNames(...classes) {
+    return classes.join(" ");
+}
+
 export default function Header() {
     return (
-        <nav className="px-36 py-8 flex justify-between gap-x-10">
-            <div className="flex gap-5">
-                <div className="m-0 p-0">
-                    <svg width="40" height="40" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path
-                            fill-rule="evenodd"
-                            clip-rule="evenodd"
-                            d="M8.55273 3.59787C7.12207 4.59823 5.82837 5.78098 4.70532 7.1124C9.29462 6.68633 15.1252 7.38204 21.8944 10.7667C29.123 14.3809 34.9438 14.5031 38.9948 13.7217C38.6272 12.6088 38.1644 11.5392 37.6163 10.5224C32.979 11.0115 27.034 10.3641 20.1056 6.89998C15.706 4.70018 11.8278 3.79401 8.55273 3.59787ZM34.9074 6.66665C31.2453 2.575 25.9234 0 20 0C18.2605 0 16.5727 0.222107 14.9637 0.63948C17.1429 1.23409 19.4579 2.10399 21.8944 3.32227C26.967 5.85853 31.3464 6.67516 34.9074 6.66665ZM39.8609 17.6281C34.9669 18.5945 28.2088 18.396 20.1056 14.3444C12.53 10.5566 6.50043 10.6043 2.4339 11.508C2.224 11.5546 2.01904 11.6036 1.81903 11.6546C1.28662 12.8125 0.861634 14.0301 0.556702 15.2945C0.882386 15.2075 1.21893 15.1248 1.56616 15.0476C6.49957 13.9513 13.4701 13.9989 21.8944 18.2111C29.4701 21.9989 35.4996 21.9512 39.5662 21.0475C39.7055 21.0166 39.8428 20.9846 39.9778 20.9516C39.9926 20.6363 40 20.319 40 20C40 19.1975 39.9528 18.406 39.8609 17.6281ZM39.3248 25.1723C34.4783 26.0196 27.917 25.6944 20.1056 21.7888C12.53 18.001 6.50043 18.0487 2.4339 18.9524C1.53125 19.1529 0.719239 19.3972 0.00293 19.6551C0.000977 19.7698 0 19.8848 0 20C0 31.0457 8.95429 40 20 40C29.2571 40 37.0453 33.7109 39.3248 25.1723Z"
-                            fill="url(#paint0_linear_832_1184)"
-                        />
-                        <defs>
-                            <linearGradient id="paint0_linear_832_1184" x1="36" y1="43.2" x2="-3.73321" y2="35.5931" gradientUnits="userSpaceOnUse">
-                                <stop stop-color="#5D50C6" />
-                                <stop offset="1" stop-color="#F85E9F" />
-                            </linearGradient>
-                        </defs>
-                    </svg>
-                </div>
-                <div className="text-2xl self-center font-extrabold ">Travlog</div>
-            </div>
-            <div className="flex self-center gap-10 justify-evenly">
-                <div>Home</div>
-                <div>Discover</div>
-                <div>Special Deals</div>
-                <div>Contact</div>
-            </div>
-            <div className="flex gap-5">
-                <div className="self-center">Log In</div>
-                <div className="flex align-middle">
-                    <button
-                        type="button"
-                        class="text-white bg-lightpurple hover:bg-lightpurple focus:outline-none focus:ring-4 focus:ring-purple-300 font-medium rounded-full text-sm px-5 py-2.5 text-center dark:bg-purple-600 dark:hover:bg-purple-700 dark:focus:ring-purple-900"
-                    >
-                        Sign In
-                    </button>
-                </div>
-            </div>
-        </nav>
+        <Disclosure as="nav">
+            {({ open }) => (
+                <>
+                    <div className="mx-auto max-w-7xl">
+                        <div className="relative flex h-16 items-center justify-between">
+                            <div className="flex items-center sm:hidden">
+                                {/* Mobile menu button*/}
+                                <Disclosure.Button className="relative inline-flex items-center justify-center rounded-md p-2 text-lightpurple hover:bg-lightpurple-500 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white">
+                                    <span className="absolute -inset-0.5" />
+                                    <span className="sr-only">Open main menu</span>
+                                    {open ? <XMarkIcon className="block h-6 w-6" aria-hidden="true" /> : <Bars3Icon className="block h-6 w-6" aria-hidden="true" />}
+                                </Disclosure.Button>
+                            </div>
+                            <div className="items-center flex gap-2">
+                                <Image className="h-8 w-auto" src="./svgs/logo.svg" width={100} height={100} alt="Your Company" />
+                                <div className="font-extrabold text-xl">
+                                    Travlog
+                                </div>
+                            </div>
+
+                            <div className="hidden sm:ml-6 sm:block ">
+                                <div className="flex items-center sm:items-stretch sm:justify-center">
+                                    <div className="flex space-x-4">
+                                        {navigation.map((item) => (
+                                            <a
+                                                key={item.name}
+                                                href={item.href}
+                                                className={classNames(
+                                                    item.current ? " font-bold  " : " font-semibold ",
+                                                    "rounded-md px-2 py-2 hover:font-extrabold"
+                                                )}
+                                                aria-current={item.current ? "page" : undefined}
+                                            >
+                                                {item.name}
+                                            </a>
+                                        ))}
+                                    </div>
+                                </div>
+                            </div>
+                            <div className="flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0 gap-2">
+                                <div>
+                                    Log In
+                                </div>
+                                <button
+                                    type="button"
+                                    className="relative rounded-full bg-lightpurple-500 hover:bg-lightpurple-700 px-3 py-2 text-white hover:bg-lightpurple focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800"
+                                >
+                                    Sign Up
+                                </button>
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <Disclosure.Panel className="sm:hidden">
+                        <div className="space-y-1 px-2 pb-3 pt-2">
+                            {navigation.map((item) => (
+                                <Disclosure.Button
+                                    key={item.name}
+                                    as="a"
+                                    href={item.href}
+                                    className={classNames(
+                                        item.current ? "bg-lightpurple-500 text-white" : "text-gray-300 hover:bg-lightpurple-500 hover:text-white",
+                                        "block rounded-md px-3 py-2 text-base font-medium"
+                                    )}
+                                    aria-current={item.current ? "page" : undefined}
+                                >
+                                    {item.name}
+                                </Disclosure.Button>
+                            ))}
+                        </div>
+                    </Disclosure.Panel>
+                </>
+            )}
+        </Disclosure>
     );
 }
