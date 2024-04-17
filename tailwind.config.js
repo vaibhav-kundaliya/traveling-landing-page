@@ -22,7 +22,8 @@ module.exports = {
                     500: "#5D50C6",
                     700: "#4F3DAF",
                 },
-                lightpink:"#F85E9F"
+                lightpink:"#F85E9F",
+                lightorange: "#FF5722"
             },
         },
         screens: {
