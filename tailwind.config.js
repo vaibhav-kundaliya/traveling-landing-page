@@ -6,6 +6,7 @@ module.exports = {
             backgroundImage: {
                 "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
                 "gradient-conic": "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
+                "heroSection": 'url("/svgs/section-1.svg")'
             },
             fontWeight: {
                 regular: 400,
@@ -21,6 +22,7 @@ module.exports = {
                     500: "#5D50C6",
                     700: "#4F3DAF",
                 },
+                lightpink:"#F85E9F"
             },
         },
         screens: {
@@ -29,7 +31,7 @@ module.exports = {
             lg: "1024px",
             xl: "1280px",
             "2xl": "1536px",
-            custom_xs: "425px",
+            custom_xs: "500px",
         },
     },
     plugins: [],
