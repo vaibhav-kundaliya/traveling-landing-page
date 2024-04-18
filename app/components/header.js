@@ -1,13 +1,15 @@
 "use client";
 import { Disclosure } from "@headlessui/react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
-import Image from 'next/image';
+import Image from "next/image";
 
 const navigation = [
-    { name: "Home", href: "#", current: true },
-    { name: "Discover", href: "#", current: false },
-    { name: "Special Deals", href: "#", current: false },
-    { name: "Contact", href: "#", current: false },
+    { name: "Home", href: "#", current: true, onlyInDropDown: false },
+    { name: "Discover", href: "#", current: false, onlyInDropDown: false },
+    { name: "Special Deals", href: "#", current: false, onlyInDropDown: false },
+    { name: "Contact", href: "#", current: false, onlyInDropDown: false },
+    { name: "Sign In", href: "#", current: false, onlyInDropDown: true },
+    { name: "Sign Up", href: "#", current: false, onlyInDropDown: true },
 ];
 
 function classNames(...classes) {
@@ -20,7 +22,7 @@ export default function Header() {
             {({ open }) => (
                 <>
                     <div className="mx-auto max-w-7xl">
-                        <div className="relative flex h-16 items-center justify-between">
+                        <div className="relative flex flex-row-reverse sm:flex-row h-16 items-center justify-between">
                             <div className="flex items-center sm:hidden">
                                 {/* Mobile menu button*/}
                                 <Disclosure.Button className="relative inline-flex items-center justify-center rounded-md p-2 text-lightpurple hover:bg-lightpurple-500 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white">
@@ -31,22 +33,17 @@ export default function Header() {
                             </div>
                             <div className="items-center flex gap-2">
                                 <Image className="h-8 w-auto" src="./svgs/logo.svg" width={100} height={100} alt="Your Company" />
-                                <div className="font-extrabold text-xl">
-                                    Travlog
-                                </div>
+                                <div className="font-extrabold text-xl">Travlog</div>
                             </div>
 
                             <div className="hidden sm:ml-6 sm:block ">
                                 <div className="flex items-center sm:items-stretch sm:justify-center">
                                     <div className="flex space-x-4">
-                                        {navigation.map((item) => (
+                                        {navigation.filter(item => !(item.onlyInDropDown)).map((item) => (
                                             <a
                                                 key={item.name}
                                                 href={item.href}
-                                                className={classNames(
-                                                    item.current ? " font-bold  " : " font-semibold ",
-                                                    "rounded-md px-2 py-2 hover:font-extrabold"
-                                                )}
+                                                className={classNames(item.current ? " font-bold  " : " font-semibold ", "rounded-md px-2 py-2 hover:font-extrabold")}
                                                 aria-current={item.current ? "page" : undefined}
                                             >
                                                 {item.name}
@@ -55,17 +52,9 @@ export default function Header() {
                                     </div>
                                 </div>
                             </div>
-                            <div className="flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0 gap-2">
-                                <div>
-                                    Log In
-                                </div>
-                                <button
-                                    type="button"
-                                    className="relative rounded-full bg-lightpurple-500 hover:bg-lightpurple-700 px-3 py-2 text-white hover:bg-lightpurple focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800"
-                                >
-                                    Sign Up
-                                </button>
-
+                            <div className="sm:flex hidden items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0 gap-2 ">
+                                <div>Log In</div>
+                                <button class="bg-lightpurple-500 hover:bg-lightpurple-700 text-white text-xs py-2 px-6 rounded-full">Sign Up</button>
                             </div>
                         </div>
                     </div>
