@@ -1,13 +1,18 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-    content: ["./pages/**/*.{js,ts,jsx,tsx,mdx}", "./components/**/*.{js,ts,jsx,tsx,mdx}", "./app/**/*.{js,ts,jsx,tsx,mdx}"],
+    content: [
+        "./pages/**/*.{js,ts,jsx,tsx,mdx}",
+        "./components/**/*.{js,ts,jsx,tsx,mdx}",
+        "./app/**/*.{js,ts,jsx,tsx,mdx}",
+    ],
     theme: {
         extend: {
             backgroundImage: {
                 "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
-                "gradient-conic": "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
-                "heroSection": 'url("/svgs/section-1.svg")',
-                "travelpoint": 'url("/svgs/rectangle.svg")'
+                "gradient-conic":
+                    "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
+                heroSection: 'url("/svgs/section-1.svg")',
+                travelpoint: 'url("/svgs/rectangle.svg")',
             },
             fontWeight: {
                 regular: 400,
@@ -23,9 +28,10 @@ module.exports = {
                     500: "#5D50C6",
                     700: "#4F3DAF",
                 },
-                lightpink:"#F85E9F",
+                lightpink: "#F85E9F",
                 lightorange: "#FF5722",
-                lightyellow: '#FACD4914'
+                lightyellow: "#FACD4914",
+                lightgray: "#19182580"
             },
         },
         screens: {
@@ -37,7 +43,5 @@ module.exports = {
             custom_xs: "500px",
         },
     },
-    plugins: [
-        require('@tailwindcss/forms')
-    ],
+    plugins: [],
 };

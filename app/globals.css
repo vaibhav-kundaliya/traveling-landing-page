@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap");
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -18,18 +18,94 @@
 }
 
 body {
-  font-family: "Nunito Sans", sans-serif !important;
-  padding: 0.4rem;
+    font-family: "Nunito Sans", sans-serif !important;
+    padding: 0.4rem;
+    overflow-x: hidden;
 }
 
-.left-padding{
+.left-padding {
     padding-left: 15%;
 }
 
-.right-padding{
+.right-padding {
     padding-right: 15%;
 }
 
+.button-shadow {
+    box-shadow: 0px 5px 11px 0px #0000001a;
+}
+
+.card-shadow {
+    box-shadow: 0px 21px 89px 0px #0000001a;
+}
+
+.circle-shadow {
+    box-shadow: 0px 19px 19px 0px #00000017;
+}
+
+.overflow-scroll::-webkit-scrollbar {
+    display: none;
+}
+::-webkit-scrollbar {
+    width: 12px; /* Width of the scrollbar */
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1; /* Color of the scrollbar track */
+}
+
+::-webkit-scrollbar-thumb {
+    background: #888; /* Color of the scrollbar thumb */
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #555; /* Color of the scrollbar thumb on hover */
+}
+.gradiant-1 {
+    /* Ellipse 23 */
+
+    /* Ellipse 23 */
+
+    position: absolute;
+    width: 500px;
+    height: 500px;
+    left: -356px;
+    top: -223px;
+
+    /* Orange */
+    background: #ff5722;
+    opacity: 0.5;
+    filter: blur(250px);
+}
+
+.gradiant-2 {
+    /* Ellipse 24 */
+
+    position: absolute;
+    width: 500px;
+    height: 500px;
+    right: 0px;
+    top: 847px;
+
+    /* Yellow */
+    background: #facd49;
+    opacity: 0.5;
+    filter: blur(250px);
+}
+
+.gradiant-3 {
+    /* Ellipse 24 */
+
+    position: absolute;
+    width: 100px;
+    height: 500px;
+    right: 0px !important;
+    top: 2000px;
+
+    /* Yellow */
+    background: url("/svgs/wabbledesign.svg");
+    background-repeat: no-repeat;
+}
 
 @layer utilities {
     .text-balance {
@@ -38,11 +114,17 @@ body {
 }
 
 @media screen and (max-width: 1024px) {
-    .left-padding{
+    .left-padding {
         padding-left: 5%;
     }
-    
-    .right-padding{
+
+    .right-padding {
         padding-right: 5%;
-    }   
+    }
+}
+
+@media screen and (max-width: 620px) {
+    .gradiant-3 {
+        display: hidden;
+    }
 }

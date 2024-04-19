@@ -10,26 +10,30 @@ import Image from "next/image";
 export default function Home() {
     return (
         <>
-            <div className="left-padding right-padding">
+            <div className="gradiant-1"></div>
+            <div className="gradiant-2"></div>
+            <div className="gradiant-3"></div>
+            
+            <div className="">
                 <Header />
             </div>
             <div className="left-padding">
                 <HeroSection />
             </div>
-            <div className="my-10 relative">
-                <Image src="/svgs/triangle.svg" width={50} height={130} className="absolute bottom-0 left-5" />
+            <div className="my-20 relative">
+                <Image src="/svgs/triangle.svg" width={50} height={130} className="absolute right-5 lg:right-[90%] bottom-[100%] hidden sm:block" />
                 <Brands />
             </div>
-            {/* <div className="left-padding">
+            <div className="left-padding ">
                 <Services />
-            </div> */}
-            <div className="my-10">
+            </div>
+            <div>
                 <TravelPoint />
             </div>
-            <div className="py-20">
+            <div className="mt-10 md:mt-5 pb-10">
                 <NewsLatter />
             </div>
-            <div className="right-padding left-padding">
+            <div className="right-padding left-padding mt-10">
                 <Footer />
             </div>
         </>
