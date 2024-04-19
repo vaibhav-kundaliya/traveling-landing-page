@@ -4,7 +4,7 @@ function HeroSection() {
     return (
         <div className="flex flex-col-reverse sm:flex-row">
             <div className="sm:w-4/12 lg:w-5/12 pt-20 flex flex-col gap-8">
-                <button class="bg-white w-6/12 text-lightpink font-bold text-md py-3 px-4 rounded-full flex gap-6 button-shadow">
+                <button class="bg-white w-fit text-lightpink font-bold text-sm py-3 px-4 rounded-full flex gap-6 button-shadow">
                     Explore the world!
                     <Image src="/svgs/bag.svg" width={15} height={15}></Image>
                 </button>
@@ -13,7 +13,7 @@ function HeroSection() {
                 </div>
                 <div class="text-wrap text-lg font-bold text-lightgray">We always make our customer happy by providing as many choices as possible </div>
                 <div class="flex justify-start gap-5  ">
-                    <button class="bg-lightpurple-500 text-white text-xs py-2 px-4 rounded-full button-shadow">Get started</button>
+                    <button class="bg-lightpurple-500 text-white text-xs py-2 px-4 rounded-full button-shadow w-fit white-space">Get started</button>
                     <button class="bg-white font-bold text-xs py-2 px-4 rounded-full flex gap-3 border border-gray-300">
                         <Image src="/svgs/playbutton.svg" width={15} height={15}></Image>
                         Watch Demo

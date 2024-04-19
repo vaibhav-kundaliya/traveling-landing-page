@@ -35,12 +35,12 @@ function Services() {
   ];
 
   return (
-    <div className="flex gap-5 relative h-[400px] overflow-scroll">
-      <div className="w-3/12 flex flex-col mt-16">
+    <div className="flex  gap-5 relative h-[400px] overflow-scroll flex-row">
+      <div className="w-[300px] flex flex-col mt-16">
         <div className="text-lightpink font-bold">SERVICES</div>
         <div className="font-bold text-4xl text-wrap">Our top value categories for you</div>
       </div>
-      <div className="absolute left-[30%] flex gap-4">
+      <div className="sticky flex gap-4">
         {servicesData.map((service, index) => (
           <ServiceCard
             key={index}

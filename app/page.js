@@ -24,7 +24,7 @@ export default function Home() {
                 <Image src="/svgs/triangle.svg" width={50} height={130} className="absolute right-5 lg:right-[90%] bottom-[100%] hidden sm:block" />
                 <Brands />
             </div>
-            <div className="left-padding ">
+            <div className="left-padding relative">
                 <Services />
             </div>
             <div>

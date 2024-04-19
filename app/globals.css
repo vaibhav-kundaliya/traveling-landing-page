@@ -125,6 +125,6 @@ body {
 
 @media screen and (max-width: 620px) {
     .gradiant-3 {
-        display: hidden;
+        display: none;
     }
 }
