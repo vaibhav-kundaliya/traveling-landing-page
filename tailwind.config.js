@@ -6,7 +6,8 @@ module.exports = {
             backgroundImage: {
                 "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
                 "gradient-conic": "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
-                "heroSection": 'url("/svgs/section-1.svg")'
+                "heroSection": 'url("/svgs/section-1.svg")',
+                "travelpoint": 'url("/svgs/rectangle.svg")'
             },
             fontWeight: {
                 regular: 400,
@@ -23,7 +24,8 @@ module.exports = {
                     700: "#4F3DAF",
                 },
                 lightpink:"#F85E9F",
-                lightorange: "#FF5722"
+                lightorange: "#FF5722",
+                lightyellow: '#FACD4914'
             },
         },
         screens: {
@@ -35,5 +37,7 @@ module.exports = {
             custom_xs: "500px",
         },
     },
-    plugins: [],
+    plugins: [
+        require('@tailwindcss/forms')
+    ],
 };
